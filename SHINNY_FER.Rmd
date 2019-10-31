@@ -34,6 +34,8 @@ Column
 
 ### DURACION DE LA ERUPCION DEL GEYSER
 
+
+
 ```{r}
 renderPlot({
   hist(faithful$eruptions, probability = TRUE, breaks = as.numeric(input$n_breaks),
@@ -45,11 +47,24 @@ renderPlot({
 })
 ```
 
+
+
 ### PLOT DE ERUPTIONS
+
 
 ```{r}
 {   
-    plot(faithful$eruptions~faithful$waiting, xlab = "tiempo de espera entre erupciones", ylab = "erupciones")
-    lines(faithful$eruptions)
+    plot(faithful$eruptions~faithful$waiting, main = "Erupciones vs Tiempo de espera", xlab = "tiempo de espera entre erupciones", ylab = "erupciones")
+    lines(faithful$eruptions, col = "red")
+}
+```
+
+
+### SUMMARY FAITHFUL
+
+
+```{r}
+{   
+   head(faithful, 20)
 }
 ```
